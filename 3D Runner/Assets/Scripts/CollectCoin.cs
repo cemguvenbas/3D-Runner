@@ -2,17 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class CollectCoin : MonoBehaviour
 {
     public int score;
     public TextMeshProUGUI CoinText;
+    public PlayerController _playerController;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Coin"))
         {
             AddCoin();
             Destroy(other.gameObject);
+        }
+        else if (other.CompareTag("End"))
+        {
+            Debug.Log("Congrats!");
+            _playerController.runningSpeed = 0;
+
         }
     }
 
@@ -21,6 +29,7 @@ public class CollectCoin : MonoBehaviour
         if (collision.collider.CompareTag("Collision"))
         {
             Debug.Log("Touched Obstacle!...");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 
