@@ -28,7 +28,7 @@ public class CollectCoin : MonoBehaviour
     {
         if (collision.collider.CompareTag("Collision"))
         {
-            Debug.Log("Touched Obstacle!...");
+            //Debug.Log("Touched Obstacle!...");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
