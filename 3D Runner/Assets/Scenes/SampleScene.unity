@@ -399,6 +399,7 @@ MonoBehaviour:
   score: 0
   CoinText: {fileID: 1959130565}
   _playerController: {fileID: 91325881}
+  maxScore: 10
 --- !u!1001 &97822985
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -980,8 +981,8 @@ Camera:
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.53333336, g: 0.91764706, b: 1, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1095,7 +1096,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 8e2620bdb0e96aa4fbecd9fa8598eafd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

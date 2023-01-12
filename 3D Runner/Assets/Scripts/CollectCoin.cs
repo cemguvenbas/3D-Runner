@@ -9,6 +9,14 @@ public class CollectCoin : MonoBehaviour
     public int score;
     public TextMeshProUGUI CoinText;
     public PlayerController _playerController;
+    public int maxScore;
+    private Animator PlayerAnim;
+
+
+    private void Start()
+    {
+        PlayerAnim = GetComponentInChildren<Animator>();
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Coin"))
@@ -18,8 +26,17 @@ public class CollectCoin : MonoBehaviour
         }
         else if (other.CompareTag("End"))
         {
-            Debug.Log("Congrats!");
             _playerController.runningSpeed = 0;
+            if (score >= maxScore)
+            {
+                //Debug.Log("You Win");
+                PlayerAnim.SetBool("win", true);
+            }
+            else
+            {
+                //Debug.Log("You lose");
+                PlayerAnim.SetBool("lose", true);
+            }
 
         }
     }
